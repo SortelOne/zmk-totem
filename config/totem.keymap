@@ -33,6 +33,9 @@
     quick-tap-ms = <150>;
 };
 
+&tog {
+};
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -56,6 +59,13 @@
             bindings = <&none &kp J &kp A &kp K &kp E &kp DOT &kp B &kp A &kp L &kp E &kp S &kp N7 &kp N2 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
             label = "EMAIL";
         };
+
+        console_log: console_log {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp C &kp O &kp N &kp S &kp O &kp L &kp E &kp DOT &kp L &kp O &kp G &kp LPAR &kp SQT &kp K_PASTE &kp SQT &kp RPAR>;
+            label = "CONSOLE_LOG";
+        };
     };
 
     keymap {
@@ -64,40 +74,40 @@
         Base {
             display-name = "Base";
             bindings = <
-              &kp Q       &kp W       &kp E                &kp R         &kp T        &kp Y    &kp U        &kp I        &kp O       &kp P
-              &hm LGUI A  &hm LALT S  &hm LCTRL D          &hm LSHIFT F  &kp G        &kp H    &hm RSHFT J  &hm RCTRL K  &hm RALT L  &hm RGUI SEMICOLON
-&lt 3 ESCAPE  &kp Z       &kp X       &kp C                &kp V         &kp B        &kp N    &kp M        &kp COMMA    &kp DOT     &kp SLASH           &kp APOSTROPHE
-                                      &mt LCTRL BACKSPACE  &lt 1 TAB     &kp SPACE    &kp RET  &lt 2 SPACE  &kp DELETE
+              &kp Q       &kp W       &kp E        &kp R         &kp T        &kp Y      &kp U          &kp I        &kp O       &kp P
+              &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHIFT F  &kp G        &kp H      &hm RSHFT J    &hm RCTRL K  &hm RALT L  &hm RGUI SEMICOLON
+&lt 2 ESCAPE  &kp Z       &kp X       &kp C        &kp V         &kp B        &kp N      &kp M          &kp COMMA    &kp DOT     &kp SLASH           &kp APOSTROPHE
+                                      &mo 2        &kp TAB       &kp SPACE    &kp SPACE  &kp BACKSPACE  &mo 1
             >;
         };
 
         Nav {
             display-name = "Nav";
             bindings = <
-              &kp TILDE       &kp HOME     &kp UP_ARROW  &kp END        &kp LBRC    &kp RBRC  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-              &kp LEFT_SHIFT  &kp LEFT     &kp DOWN      &kp RIGHT      &kp LBKT    &kp RBKT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS
-&kp LEFT_ALT  &kp LEFT_WIN    &kp PAGE_UP  &trans        &kp PAGE_DOWN  &kp LPAR    &kp RPAR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_MULTIPLY  &kp PLUS
-                                           &trans        &trans         &trans      &trans    &trans        &kp DOT
-            >;
-        };
-
-        Sym {
-            display-name = "Sym";
-            bindings = <
-                &kp EXCL  &kp AT  &kp HASH           &kp DOLLAR       &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp SQT  &kp DQT
-                &trans    &trans  &trans             &trans           &trans         &trans     &trans         &trans           &trans   &trans
-&studio_unlock  &trans    &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans         &kp UNDER  &kp EQUAL      &trans           &trans   &kp SLASH  &kp HOME
-                                  &trans             &trans           &trans         &trans     &trans         &trans
+              &kp TILDE       &kp HOME     &kp UP_ARROW  &kp END        &kp LBRC     &kp RBRC  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+              &kp LEFT_SHIFT  &kp LEFT     &kp DOWN      &kp RIGHT      &kp LBKT     &kp RBKT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_ASTERISK
+&kp LEFT_ALT  &kp LEFT_WIN    &kp PAGE_UP  &trans        &kp PAGE_DOWN  &kp LPAR     &kp RPAR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH    &kp PLUS
+                                           &trans        &kp EQUAL      &kp MINUS    &trans    &trans        &trans
             >;
         };
 
         Fun {
             display-name = "Fun";
             bindings = <
-        &bootloader  &trans  &trans  &trans  &to 0     &trans  &kp F7  &kp F8  &kp F9  &kp F10
-        &trans       &trans  &trans  &trans  &trans    &trans  &kp F4  &kp F5  &kp F6  &trans
-&trans  &trans       &trans  &trans  &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &trans   &trans
-                             &trans  &trans  &trans    &trans  &trans  &trans
+        &trans  &trans  &trans        &trans           &trans              &trans  &kp F7  &kp F8  &kp F9  &kp F10
+        &trans  &trans  &trans        &trans           &trans              &trans  &kp F4  &kp F5  &kp F6  &trans
+&trans  &trans  &trans  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_PLAY_PAUSE    &trans  &kp F1  &kp F2  &kp F3  &trans   &trans
+                        &trans        &trans           &trans              &mo 3   &trans  &trans
+            >;
+        };
+
+        Sym {
+            display-name = "Sym";
+            bindings = <
+                &kp EXCL     &kp AT  &kp HASH  &kp DOLLAR    &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp SQT  &kp DQT
+                &trans       &trans  &trans    &console_log  &trans         &trans     &email         &trans           &trans   &trans
+&studio_unlock  &bootloader  &trans  &trans    &trans        &trans         &kp UNDER  &kp EQUAL      &trans           &trans   &kp BACKSLASH  &kp HOME
+                                     &trans    &trans        &trans         &trans     &trans         &trans
             >;
         };
     };
