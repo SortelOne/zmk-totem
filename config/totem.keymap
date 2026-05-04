@@ -113,10 +113,10 @@
 
         Extras {
             bindings = <
-        &kp ESC  &trans  &trans  &kp TILDE  &kp GRAVE    &trans  &trans  &trans  &trans  &trans
-        &trans   &trans  &trans  &kp DEL    &kp BSPC     &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &trans  &trans  &kp TAB    &kp SPACE    &trans  &trans  &trans  &trans  &trans  &trans
-                         &trans  &trans     &trans       &trans  &trans  &trans
+        &kp ESC    &trans   &trans     &trans     &kp GRAVE     &trans  &trans  &trans  &trans  &trans
+        &kp TILDE  &kp TAB  &kp SPACE  &kp ENTER  &kp BSPC      &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans   &trans     &trans     &kp DELETE    &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans     &trans     &trans        &trans  &trans  &trans
             >;
         };
 
