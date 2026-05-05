@@ -94,29 +94,29 @@
         Command {
             display-name = "Com";
             bindings = <
-                  &kp LEFT_ALT      &trans  &trans  &trans  &trans    &trans  &console_log  &trans  &trans  &trans
-                  &hm LEFT_SHIFT A  &trans  &trans  &trans  &trans    &trans  &email        &trans  &trans  &trans
-&kp LEFT_COMMAND  &trans            &trans  &trans  &trans  &trans    &trans  &trans        &trans  &trans  &bootloader  &studio_unlock
-                                            &trans  &trans  &trans    &trans  &trans        &trans
+                  &kp LEFT_ALT  &trans  &trans  &trans        &trans    &trans  &console_log  &trans  &trans  &trans
+                  &trans        &trans  &trans  &hm LSHIFT F  &trans    &trans  &email        &trans  &trans  &trans
+&kp LEFT_COMMAND  &trans        &trans  &trans  &trans        &trans    &trans  &trans        &trans  &trans  &bootloader  &studio_unlock
+                                        &trans  &trans        &trans    &trans  &trans        &trans
             >;
         };
 
         Control {
             display-name = "Ctr";
             bindings = <
-                  &trans            &trans  &trans  &trans  &trans    &trans  &console_log  &trans  &trans  &trans
-                  &hm LEFT_SHIFT A  &trans  &trans  &trans  &trans    &trans  &email        &trans  &trans  &trans
-&kp LEFT_CONTROL  &trans            &trans  &trans  &trans  &trans    &trans  &trans        &trans  &trans  &bootloader  &studio_unlock
-                                            &trans  &trans  &trans    &trans  &trans        &trans
+                  &trans  &trans  &trans  &trans        &trans    &trans  &console_log  &trans  &trans  &trans
+                  &trans  &trans  &trans  &hm LSHIFT F  &trans    &trans  &email        &trans  &trans  &trans
+&kp LEFT_CONTROL  &trans  &trans  &trans  &trans        &trans    &trans  &trans        &trans  &trans  &bootloader  &studio_unlock
+                                  &trans  &trans        &trans    &trans  &trans        &trans
             >;
         };
 
         Extras {
             bindings = <
-        &kp ESC    &trans   &trans     &trans     &kp GRAVE     &trans  &trans  &trans  &trans  &trans
-        &kp TILDE  &kp TAB  &kp SPACE  &kp ENTER  &kp BSPC      &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans   &trans     &trans     &kp DELETE    &trans  &trans  &trans  &trans  &trans  &trans
-                            &trans     &trans     &trans        &trans  &trans  &trans
+              &kp ESC    &trans   &trans     &trans     &kp GRAVE     &trans  &trans  &trans  &trans  &trans
+              &kp TILDE  &kp TAB  &kp SPACE  &kp ENTER  &kp BSPC      &trans  &trans  &trans  &trans  &trans
+&kp LEFT_ALT  &trans     &trans   &trans     &trans     &kp DELETE    &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans     &trans     &trans        &trans  &trans  &trans
             >;
         };
 
