@@ -94,10 +94,10 @@
         Command {
             display-name = "Com";
             bindings = <
-                  &kp LEFT_ALT  &trans  &trans  &trans        &trans    &trans  &console_log  &trans  &trans  &trans
-                  &trans        &trans  &trans  &hm LSHIFT F  &trans    &trans  &email        &trans  &trans  &trans
-&kp LEFT_COMMAND  &trans        &trans  &trans  &trans        &trans    &trans  &trans        &trans  &trans  &bootloader  &studio_unlock
-                                        &trans  &trans        &trans    &trans  &trans        &trans
+                  &trans  &trans  &trans  &trans        &trans    &trans  &console_log  &trans  &trans  &trans
+                  &trans  &trans  &trans  &hm LSHIFT F  &trans    &trans  &email        &trans  &trans  &trans
+&kp LEFT_COMMAND  &trans  &trans  &trans  &trans        &trans    &trans  &trans        &trans  &trans  &bootloader  &studio_unlock
+                                  &trans  &trans        &trans    &trans  &trans        &trans
             >;
         };
 
