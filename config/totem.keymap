@@ -16,13 +16,14 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <behaviors/brightness.dtsi>  // Prospector &inc_bri / &dec_bri
 
-// Layer indexes. Order matters: when two layers are active, the higher number wins.
-#define BASE    0
-#define MOD     1   // shared by the Ctrl and Cmd thumbs (via &lm)
-#define EXTRAS  2   // left inner thumb (hold): left-hand edit keys + right-hand symbols
-#define NAV     3   // right middle thumb: arrows/paging + numpad
-#define FUN     4   // right outer thumb: media, brightness, F-keys
-#define SYSTEM  5   // hold EXTRAS + NAV together: Bluetooth, bootloader, macros
+// Layer numbers (written as plain numbers below so the keymap editor can read them).
+// When two layers are active, the higher number wins.
+//   0 Base
+//   1 Mod     shared by the Ctrl and Cmd thumbs (via &lm)
+//   2 Extras  left inner thumb (hold): left-hand edit keys + right-hand symbols
+//   3 Nav     right middle thumb: arrows/paging + numpad
+//   4 Fun     right outer thumb: media, brightness, F-keys
+//   5 System  hold Extras + Nav together: Bluetooth, bootloader, macros
 
 &lt {
     tapping-term-ms = <240>;
@@ -77,8 +78,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         system_layer {
-            if-layers = <EXTRAS NAV>;
-            then-layer = <SYSTEM>;
+            if-layers = <2 3>;
+            then-layer = <5>;
         };
     };
 
@@ -115,7 +116,7 @@
                     &kp Q  &kp W  &kp E                   &kp R                   &kp T                 &kp Y      &kp U       &kp I      &kp O    &kp P
                     &kp A  &kp S  &kp D                   &kp F                   &kp G                 &kp H      &kp J       &kp K      &kp L    &kp SEMICOLON
 &hm LEFT_SHIFT TAB  &kp Z  &kp X  &kp C                   &kp V                   &kp B                 &kp N      &kp M       &kp COMMA  &kp DOT  &kp SLASH      &hm LEFT_ALT SQT
-                                  &lm MOD LEFT_CONTROL    &lm MOD LEFT_COMMAND    &lt EXTRAS SPACE      &kp SPACE  &mo NAV     &mo FUN
+                                  &lm 1 LEFT_CONTROL    &lm 1 LEFT_COMMAND    &lt 2 SPACE      &kp SPACE  &mo 3     &mo 4
             >;
         };
 
